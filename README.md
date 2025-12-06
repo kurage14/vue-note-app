@@ -1,8 +1,42 @@
-# Vue 3 + Vite
+# Vue 筆記應用程式 (vue-note-app)
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+這是一個基於 **Vue 3** 建立的單頁應用程式 (SPA)，旨在提供使用者一個簡單、高效的數位筆記本。專案採用現代前端技術棧，實現了基礎的筆記創建、閱讀、編輯和刪除等 CRUD 功能。
 
-Learn more about IDE Support for Vue in the [Vue Docs Scaling up Guide](https://vuejs.org/guide/scaling-up/tooling.html#ide-support).
+---
 
+## 主要技術
 
-This is a test deployment.
+本專案利用以下核心技術和工具建構：
+
+| 類別 | 技術名稱 | 用途說明 |
+| :--- | :--- | :--- |
+| **前端框架** | **Vue 3** (Composition API) | 專案的基礎框架，採用 Composition API 提升邏輯複用性和程式碼組織。 |
+| **狀態管理** | **Pinia** | 輕量、直覺的 Vue 狀態管理工具，取代 Vuex，讓狀態管理更簡單。 |
+| **路由管理** | **Vue Router 4** | 處理應用程式的頁面跳轉與路徑配置，實現 SPA 的流暢導航。 |
+| **打包工具** | **Vite** | 新一代的輕量級前端構建工具，提供極快的開發伺服器和優化的打包性能。 |
+| **部署工具** | **gh-pages** | 簡化將專案構建結果部署到 GitHub Pages 的流程。 |
+
+---
+
+## 應用程式使用指南
+
+此應用程式已部署至 GitHub Pages，您可以直接點擊以下連結開始使用：
+
+[**應用程式連結 (Live Demo)**](https://kurage14.github.io/vue-note-app/)
+
+### 操作方式 (CRUD)
+
+| 操作 | 步驟說明 |
+| :--- | :--- |
+| **創建 (Create)** | 點擊介面左上方 **新增筆記** 按紐，輸入標題和內容後儲存。 |
+| **閱讀 (Read)** | 在首頁左方的筆記列表中，點擊任一筆記標題，即可進入查看詳細內容。 |
+| **更新 (Update)** | 進入筆記詳情頁面後，修改標題或內容，點擊 **更新** 按鈕後立刻儲存。 |
+| **置頂 (Pin)** | 在首頁左方的筆記列表中，找到目標筆記，點擊其旁邊的 **圖釘** 圖示，該筆記會被移動到列表上方的重要區域。再次點擊圖釘即可取消置頂。 |
+| **刪除 (Delete)** | 在首頁左方的筆記列表中，找到目標筆記，點擊其旁邊的 **垃圾桶** 按鈕，即可移除該筆記。 |
+
+---
+
+## 專案開發者備註
+
+* **GitHub Pages Base 路徑**: 專案在 `vite.config.js` 中配置了 `base: '/vue-note-app/'`，並在 Vue Router 中使用了 `import.meta.env.BASE_URL`，確保專案部署在 GitHub Pages 子路徑時路由和資源都能夠正確加載。
+* **Devtools 啟用**: 為了方便開發者進行元件狀態檢查，已在 `main.js` 中手動設定 `app.config.devtools = true`，即使在生產模式下也能使用 Vue Devtools 插件。
